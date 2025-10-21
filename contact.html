@@ -36,11 +36,14 @@
     <h2 class="section-title">✉ تواصل معنا</h2>
     <p class="muted">لو عندك استفسار أو طلب شرح أو محتوى، تواصل معانا عبر تليجرام أو اكتب هنا.</p>
 
-    <form onsubmit="return submitForm(event)" class="contact-form">
+    <!-- نموذج Formspree -->
+    <form action="https://formspree.io/f/xvgwnrzj" method="POST" class="contact-form">
       <label>اسمك</label>
-      <input type="text" id="name" required />
+      <input type="text" name="name" required />
+      
       <label>رسالتك</label>
-      <textarea id="message" rows="5" required></textarea>
+      <textarea name="message" rows="5" required></textarea>
+      
       <button class="btn" type="submit">أرسل</button>
     </form>
 

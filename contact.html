@@ -1,60 +1,27 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>A Tech — تواصل معنا</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<form id="contactForm">
+  <label>اسمك:</label>
+  <input type="text" name="name" required>
+  
+  <label>رسالتك:</label>
+  <textarea name="message" rows="5" required></textarea>
+  
+  <button type="submit">أرسل</button>
+</form>
 
-<nav id="sidebar" class="sidebar">
-  <button class="close-btn" onclick="closeMenu()">✕</button>
-  <ul>
-    <li><a href="index.html">🏠 الرئيسية</a></li>
-    <li><a href="apps.html">📌 التطبيقات</a></li>
-    <li><a href="videos.html">🎬 الفيديوهات</a></li>
-    <li><a href="about.html">ℹ من نحن</a></li>
-    <li><a href="contact.html">✉ تواصل معنا</a></li>
-  </ul>
-</nav>
-
-<header class="topbar">
-  <div class="right-area">
-    <button class="menu-toggle" onclick="openMenu()">☰</button>
-    <h1 class="brand"><span class="brand-accent">A</span> Tech</h1>
-  </div>
-  <div class="left-area">
-    <a class="icon-btn" href="https://t.me/A_Tech_Plus" target="_blank" rel="noopener">تليجرام</a>
-    <a class="icon-btn" href="https://youtube.com/@5_tech?si=tHbxHDwLeFEnEG29" target="_blank" rel="noopener">يوتيوب</a>
-  </div>
-</header>
-
-<main class="container">
-  <section class="section">
-    <h2 class="section-title">✉ تواصل معنا</h2>
-    <p class="muted">لو عندك استفسار أو طلب شرح أو محتوى، تواصل معانا عبر تليجرام أو اكتب هنا.</p>
-
-    <!-- نموذج Formspree -->
-    <form action="https://formspree.io/f/xvgwnrzj" method="POST" class="contact-form">
-      <label>اسمك</label>
-      <input type="text" name="name" required />
-      
-      <label>رسالتك</label>
-      <textarea name="message" rows="5" required></textarea>
-      
-      <button class="btn" type="submit">أرسل</button>
-    </form>
-
-    <p class="muted" style="margin-top:12px">أو تواصل عبر تليجرام: <a href="https://t.me/A_Tech_Plus" target="_blank" rel="noopener">A_Tech_Plus</a></p>
-  </section>
-</main>
-
-<footer class="site-footer">
-  © 2025 A Tech
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    message: form.message.value
+  };
+  await fetch("https://اسم-مشروعك.glitch.me/send", { // ضع رابط Glitch هنا
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+  alert("تم إرسال الرسالة على التليجرام!");
+  form.reset();
+});
+</script>

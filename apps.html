@@ -6,35 +6,62 @@
 <title>A Tech — التطبيقات</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-/* تنسيق البطاقات */
-.apps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-.app-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
-}
-.app-card img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-.app-card h3 {
-  margin: 10px 0 5px;
-}
-.app-card .muted {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
-  text-align: right;
-  margin-bottom: 10px;
-}
+</head>
+<body>
+
+<nav id="sidebar" class="sidebar">
+  <button class="close-btn" onclick="closeMenu()">✕</button>
+  <ul>
+    <li><a href="index.html">🏠 الرئيسية</a></li>
+    <li><a href="apps.html">📌 التطبيقات</a></li>
+    <li><a href="videos.html">🎬 الفيديوهات</a></li>
+    <li><a href="about.html">ℹ من نحن</a></li>
+    <li><a href="contact.html">✉ تواصل معنا</a></li>
+  </ul>
+</nav>
+
+<header class="topbar">
+  <div class="right-area">
+    <button class="menu-toggle" onclick="openMenu()">☰</button>
+    <h1 class="brand"><span class="brand-accent">A</span> Tech</h1>
+  </div>
+  <div class="left-area">
+    <a class="icon-btn" href="https://t.me/A_Tech_Plus" target="_blank" rel="noopener">تليجرام</a>
+    <a class="icon-btn" href="https://youtube.com/@5_tech?si=tHbxHDwLeFEnEG29" target="_blank" rel="noopener">يوتيوب</a>
+  </div>
+</header>
+
+<main class="container">
+  <section class="section">
+    <h2 class="section-title">📦 جميع التطبيقات</h2>
+
+    <div class="apps-grid">
+      <article class="app-card">
+        <img src="https://a.top4top.io/p_3580hmnma0.jpg" alt="PES 2019">
+        <h3>PES 2019</h3>
+        <p class="muted">لشرح طريقة التثبيت https://youtu.be/J5BR48Vwc1Qللتحميل).</p>
+        <a class="btn" href="https://linkjust.com/PES2019" target="_blank" rel="noopener">تحميل</a>
+      </article>
+
+      <article class="app-card">
+        <img src="https://b.top4top.io/p_35801jjtp0.jpg" alt="Nox Cleaner">
+        <h3>Nox Cleaner</h3>
+        <p class="muted">تطبيق لتنظيف الهاتف وتسريع الأداء.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.nox.app.cleaner" target="_blank" rel="noopener">تحميل</a>
+      </article>
+
+      <!-- إضافات مستقبلية بنفس النمط -->
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  © 2025 A Tech
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>}
 .app-card .btn {
   display: inline-block;
   padding: 8px 15px;
